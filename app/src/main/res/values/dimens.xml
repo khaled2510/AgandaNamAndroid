@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="defaultSizeText">20dp</dimen>
+    <dimen name="defaultMargin">10dp</dimen>
+    <dimen name="titleSizeText">40dp</dimen>
+    <dimen name="largeMargin">20dp</dimen>
+    <dimen name="pseudoTextSize">30dp</dimen>
+</resources>

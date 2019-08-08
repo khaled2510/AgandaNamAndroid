@@ -10,6 +10,10 @@ public class TokenModel {
         this.expires_in = expires_in;
     }
 
+    public TokenModel(){
+
+    }
+
     public String getAccess_token() {
         return access_token;
     }

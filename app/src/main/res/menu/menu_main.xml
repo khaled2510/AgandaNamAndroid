@@ -12,7 +12,7 @@
     <item
         android:id="@+id/itemSearchByDate"
         android:title="@string/searchByDate"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         />
 
 </menu>

@@ -1,4 +1,4 @@
-package exception;
+package com.henallux.khal.smartcity.activity.exception;
 
 public class ServerErrorException extends Exception {
     public String getMessage(){

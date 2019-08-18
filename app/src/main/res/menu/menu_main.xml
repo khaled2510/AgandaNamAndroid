@@ -4,15 +4,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/itemDeco"
-        android:icon="@android:drawable/ic_lock_power_off"
-        android:title="@string/d_connexion"
-        app:showAsAction="always" />
+        android:id="@+id/itemParticipation"
+        android:title="@string/myParticipation"
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/itemSearchByDate"
         android:title="@string/searchByDate"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/itemDeco"
+        android:title="@string/d_connexion"
+        app:showAsAction="never" />
 
 </menu>

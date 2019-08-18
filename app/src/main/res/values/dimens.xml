@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="defaultSizeText">20dp</dimen>
-    <dimen name="defaultMargin">10dp</dimen>
-    <dimen name="titleSizeText">40dp</dimen>
-    <dimen name="largeMargin">20dp</dimen>
-    <dimen name="pseudoTextSize">30dp</dimen>
+    <dimen name="defaultSizeText">20sp</dimen>
+    <dimen name="defaultMargin">10sp</dimen>
+    <dimen name="titleSizeText">40sp</dimen>
+    <dimen name="largeMargin">20sp</dimen>
+    <dimen name="pseudoTextSize">23sp</dimen>
+    <dimen name="text_margin">16sp</dimen>
 </resources>

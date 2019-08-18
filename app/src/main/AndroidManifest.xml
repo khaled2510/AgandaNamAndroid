@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.henallux.khal.smartcity">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -22,11 +23,34 @@
         <activity
             android:name=".activity.ViewInscription"
             android:label="@string/inscription"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.CategoriesActivity" />
-        <activity android:name=".activity.ResultSearchActivity" />
-        <activity android:name=".activity.EventActivity"></activity>
-        
+            android:parentActivityName=".activity.MainActivity"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".activity.CategoriesActivity"
+            android:label="@string/categories"
+            android:parentActivityName=".activity.MainActivity"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".activity.ResultSearchActivity"
+            android:label="@string/result"
+            android:parentActivityName=".activity.CategoriesActivity" />
+        <activity
+            android:name=".activity.EventActivity"
+            android:label="@string/result"
+            android:parentActivityName=".activity.ResultSearchActivity" />
+        <activity
+            android:name=".activity.ParticipationAvtivity"
+            android:label="@string/title_activity_participation_avtivity"
+            android:parentActivityName=".activity.CategoriesActivity" />
+        <activity
+            android:name=".activity.SearchByDateActivity"
+            android:label="@string/searchByDate"
+            android:parentActivityName=".activity.CategoriesActivity" />
+        <activity
+            android:name=".activity.CommentActivity"
+            android:label="@string/title_activity_comment"
+            android:parentActivityName=".activity.EventActivity">
+        </activity>
     </application>
 
 </manifest>

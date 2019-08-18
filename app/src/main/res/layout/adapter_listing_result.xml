@@ -5,33 +5,45 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/title_result_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/titleResultDefault"
-            android:textSize="20dp"
+            android:textSize="25dp"
+            android:textColor="#FF8F00"/>
+        <TextView
+            android:id="@+id/title_date_creation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/presentation"
             android:textColor="@color/textColorDefault"
-            />
-
-        <ImageView
-            android:id="@+id/img_result_id"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:src="@drawable/default_image"
-            android:layout_below="@+id/title_result_id"
-            />
-
+            android:layout_below="@+id/title_result_id"/>
+        <TextView
+            android:id="@+id/text_date_creation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorDefault"
+            android:layout_below="@+id/title_date_creation"/>
+        <TextView
+            android:id="@+id/title_description_result_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textColor="@color/textColorDefault"
+            android:layout_below="@+id/text_date_creation"/>
         <TextView
             android:id="@+id/text_description_result_id"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:maxLines="3"
+            android:text="@string/description"
             android:textColor="@color/textColorDefault"
-            android:text="@string/descriptionResultDefault"
-            android:layout_below="@+id/title_result_id"
-            android:layout_toRightOf="@+id/img_result_id"
-            />
+            android:layout_below="@+id/title_description_result_id"/>
+
     </RelativeLayout>
 </LinearLayout>

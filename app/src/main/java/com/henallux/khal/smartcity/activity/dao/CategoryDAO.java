@@ -1,5 +1,7 @@
 package com.henallux.khal.smartcity.activity.dao;
 
+import com.henallux.khal.smartcity.activity.utils.TLSSocketFactory;
+import com.henallux.khal.smartcity.activity.exception.ServerErrorException;
 import com.henallux.khal.smartcity.activity.model.CategoryModel;
 
 
@@ -9,25 +11,32 @@ import java.io.*;
 import org.json.*;
 import com.google.gson.*;
 
+import javax.net.ssl.HttpsURLConnection;
+
 
 public class CategoryDAO {
 
-    public ArrayList<CategoryModel> getAllCategories (String token) throws Exception{
-        URL url = new URL ("http://localhost:5000/api/categorie");
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    public ArrayList<CategoryModel> getAllCategories (String token) throws ServerErrorException{
+        try{
+            URL url = new URL ("https://agendanam2.azurewebsites.net/api/Categorie");
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+            connection.setSSLSocketFactory(new TLSSocketFactory());
+            connection.setRequestProperty("Authorization", "Bearer " + token);
 
-        connection.setRequestProperty("Authorization", "Bearer " + token);
-
-        BufferedReader buffer = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        StringBuilder builder = new StringBuilder();
-        String stringJSON = "",line;
-        while ((line=buffer.readLine()) != null){
-            builder.append(line);
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder builder = new StringBuilder();
+            String stringJSON = "",line;
+            while ((line=buffer.readLine()) != null){
+                builder.append(line);
+            }
+            buffer.close();
+            stringJSON = builder.toString();
+            connection.disconnect();
+            return jsonToCategories(stringJSON);
         }
-        buffer.close();
-        stringJSON = builder.toString();
-
-        return jsonToCategories(stringJSON);
+        catch (Exception e){
+            throw new ServerErrorException();
+        }
     }
 
     private ArrayList<CategoryModel> jsonToCategories (String stringJSON) throws Exception {
@@ -41,8 +50,6 @@ public class CategoryDAO {
             category = object.fromJson(jsonCategory.toString(), CategoryModel.class);
             categories.add(category);
         }
-
         return categories;
-
     }
 }

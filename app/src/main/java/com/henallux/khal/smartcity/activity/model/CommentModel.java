@@ -8,8 +8,7 @@ public class CommentModel {
     private String texte;
     private int evenementId;
 
-    public CommentModel(int id, String auteurId, String texte, int evenementId) {
-        this.id = id;
+    public CommentModel(String auteurId, String texte, int evenementId) {
         this.auteurId = auteurId;
         this.texte = texte;
         this.evenementId = evenementId;

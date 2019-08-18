@@ -10,19 +10,13 @@ public class UserModel {
     private String eMail;
     private String password;
     private String role;
-    private ArrayList<CommentModel> comments;
-    private ArrayList<EventModel> events;
 
-
-    public UserModel(String pseudo, String lastName, String firstName, String eMail, String password, String role, ArrayList<CommentModel> comments, ArrayList<EventModel> events) {
+    public UserModel(String pseudo, String lastName, String firstName, String eMail, String password) {
         this.pseudo = pseudo;
         this.lastName = lastName;
         this.firstName = firstName;
         this.eMail = eMail;
         this.password = password;
-        this.role = role;
-        this.comments = comments;
-        this.events = events;
     }
 
     public String getPseudo() {
@@ -49,15 +43,6 @@ public class UserModel {
         return role;
     }
 
-    public ArrayList<CommentModel> getComments() {
-        return comments;
-    }
-
-    public ArrayList<EventModel> getEvents() {
-        return events;
-    }
-
-
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
     }
@@ -80,13 +65,5 @@ public class UserModel {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public void setComments(ArrayList<CommentModel> comments) {
-        this.comments = comments;
-    }
-
-    public void setEvents(ArrayList<EventModel> events) {
-        this.events = events;
     }
 }
